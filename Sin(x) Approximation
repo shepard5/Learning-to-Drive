@@ -1,0 +1,23 @@
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+
+# Generate some sample data
+x = np.linspace(-10, 10, 1000)
+y = np.sin(x)  # Suppose we're trying to approximate the sine function
+
+# Build a simple feed-forward neural network model
+model = keras.Sequential([
+    keras.layers.Dense(64, activation='relu', input_shape=(1,)),
+    keras.layers.Dense(64, activation='relu'),
+    keras.layers.Dense(1)  # No activation for the last layer since it's regression
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='mean_squared_error')
+
+# Train the model
+model.fit(x, y, epochs=50, batch_size=32, validation_split=0.2)
+
+# Predict using the model
+y_pred = model.predict(x)
