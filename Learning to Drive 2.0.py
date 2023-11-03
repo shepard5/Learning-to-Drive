@@ -121,6 +121,50 @@ class Car:
             self.y -= velocity
         pass
 
+    def get_sensor_readings(self, track):
+        """
+        Get sensor readings for distance to track boundaries in four directions:
+        forward, backward, left, and right relative to the car's orientation.
+        """
+
+        # Maps of orientation to direction vectors
+        directions = {
+            0: {'forward': np.array([0, 1]), 'backward': np.array([0, -1]), 'left': np.array([-1, 0]), 'right': np.array([1, 0])},
+            1: {'forward': np.array([1, 0]), 'backward': np.array([-1, 0]), 'left': np.array([0, 1]), 'right': np.array([0, -1])},
+            2: {'forward': np.array([0, -1]), 'backward': np.array([0, 1]), 'left': np.array([1, 0]), 'right': np.array([-1, 0])},
+            3: {'forward': np.array([-1, 0]), 'backward': np.array([1, 0]), 'left': np.array([0, -1]), 'right': np.array([0, 1])},
+        }
+
+        sensor_directions = directions[self.orientation]
+
+        sensor_readings = {}
+
+        # Check each sensor direction
+        for key, direction in sensor_directions.items():
+            position = np.array([self.x, self.y])  # Car's position
+            distance = 0
+
+            # Move in the direction until we hit the track boundary (value 1) or another obstacle
+            #while True:
+                #position += direction
+                #if position[0] < 0 or position[0] >= track.shape[1] or \
+                   #position[1] < 0 or position[1] >= track.shape[0] or \
+                   #track[int(position[1]), int(position[0])] == 1:
+                    #break
+                #distance += 1
+            
+            while True:
+                position += direction
+                if position[0] < 0 or position[0] >= track.shape[1] or \
+                   position[1] < 0 or position[1] >= track.shape[0] or \
+                   track[int(position[1]), int(position[0])] == 1:
+                    break
+                distance += 1
+            sensor_readings[key] = distance
+
+        return sensor_readings
+
+
 
 
 class DQN(nn.Module):
