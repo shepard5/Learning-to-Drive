@@ -5,3 +5,5 @@ Initial assumptions for bulding the model: Individual finishing times are indepe
 creating a model that predicts finishing times will be simpler because of independence.
 
 "Learning to Drive" and "Learning to Drive 2.0" utilizes a DQN and trains the model by approximating q-values (or the most optimal next step based on past attempts) using the Bellman equation. At each iteration, the model can opt to accelerate, brake, or turn the model left or right (4 total actions). 
+
+Image classification playground provides a template for a convolution neural network for any image related datasets - autoformatting included. 91% cancer identification success rate using pre-optimized hyperparameters from https://www.kaggle.com/datasets/preetviradiya/brian-tumor-dataset
