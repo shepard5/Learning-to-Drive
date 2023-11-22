@@ -1,9 +1,9 @@
-# Neural-Net-Universal-Function-Apporximator
-The purpose of this repository is to explore the possibility of building a horseracing model that predicts race outcomes with significant accuracy. The goal is to learn more about machine learning techniques and model optimization with PyTorch and TensorFlow.
+# Neural-Net-Playground
+Just playing around with different NN libraries and exploring their capabilities
 
-Initial assumptions for bulding the model: Individual finishing times are independent, horse finishes are dependent, (are stable positions independent of horse times?)
+Horse Racing... Initial assumptions for bulding the model: Individual finishing times are independent, horse finishes are dependent, (are stable positions independent of horse times?)
 creating a model that predicts finishing times will be simpler because of independence.
 
-"Learning to Drive" and "Learning to Drive 2.0" utilizes a DQN and trains the model by approximating q-values (or the most optimal next step based on past attempts) using the Bellman equation. At each iteration, the model can opt to accelerate, brake, or turn the model left or right (4 total actions). 
+"Learning to Drive" and "Learning to Drive 2.0" is a DQN - trains the model approximating q-values (most optimal next step based on prior info) using the Bellman equation. At each step, car can brake, turn left, right and accel (4 actions). 
 
-Image classification playground provides a template for a convolution neural network for any image related datasets - autoformatting included. 91% cancer identification success rate using pre-optimized hyperparameters from https://www.kaggle.com/datasets/preetviradiya/brian-tumor-dataset
+Image classification playground templates a convolution NN for any image related datasets - (image formatting in script). 91% cancer identification success rate using pre-optimized hyperparameters from https://www.kaggle.com/datasets/preetviradiya/brian-tumor-dataset
