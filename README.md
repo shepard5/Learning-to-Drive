@@ -7,3 +7,6 @@ Playing around with different NN libraries and exploring their capabilities
 <img width="307" alt="Screenshot 2023-12-06 at 1 45 41 AM" src="https://github.com/shepard5/Neural-Net-Playground/assets/108085853/1498a9d6-3092-4dbf-b26f-08a43bf80bf2">
  
 Successfully crossed the finish line consistently after ~7 minutes training on Apple M1. 
+
+![Figure_1](https://github.com/shepard5/Learning-to-Drive/assets/108085853/86ed0053-f14e-4c60-87ae-eee230909b19)
+Consistent completion after 3000 epochs gamma = .9 LR = .01, epsilon = .998 (12/21/23)
