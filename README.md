@@ -9,4 +9,5 @@ Playing around with different NN libraries and exploring their capabilities
 Successfully crossed the finish line consistently after ~7 minutes training on Apple M1. 
 
 ![Figure_1](https://github.com/shepard5/Learning-to-Drive/assets/108085853/86ed0053-f14e-4c60-87ae-eee230909b19)
-Consistent completion after 3000 epochs gamma = .9 LR = .01, epsilon = .998 (12/21/23)
+
+Consistent completion after 3000 epochs; reward system as a function of arclength of y = sin(x) and large reward for completion, gamma = .9 LR = .01, epsilon = .998 (12/21/23)
