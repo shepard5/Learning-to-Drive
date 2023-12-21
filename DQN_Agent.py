@@ -5,6 +5,7 @@ import torch.nn as nn
 from DQN import DQN
 
 
+
 class DQN_agent:
     def __init__(self,input_dim,output_dim,learning_rate,gamma=0.99):
             self.device = torch.device("cpu")
@@ -13,8 +14,10 @@ class DQN_agent:
             self.target_network.load_state_dict(self.q_network.state_dict())
             self.target_network.eval()
             self.optimizer = optim.Adam(self.q_network.parameters(), lr = learning_rate)
+            self.optimizer
             self.gamma = gamma
             self.batch_size = 64
+
             
             ##Training
     def choose_action(self, state, epsilon): 
@@ -24,6 +27,7 @@ class DQN_agent:
             state_tensor = torch.FloatTensor(state).to(self.device) #90% probability max Q action is selected (exploitation)
             with torch.no_grad():
                 q_values = self.q_network(state_tensor)
+#                print(q_values)
             return q_values.argmax().item()
     
     def train(self,memory):
@@ -47,7 +51,9 @@ class DQN_agent:
         
         self.optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(self.q_network.parameters(), max_norm=1.0)
         self.optimizer.step()
 
     def update_target_network(self):
         self.target_network.load_state_dict(self.q_network.state_dict())
+
